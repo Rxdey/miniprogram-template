@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<base-view>
+  <view class="home">
+    <van-cell-group>
+      <van-cell title="home" value="内容" is-link/>
+      <van-cell title="home" value="内容" label="描述信息" border="{{ false }}" />
+    </van-cell-group>
+  </view>
+</base-view>
