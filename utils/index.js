@@ -28,20 +28,9 @@ export const getTimeAgo = (date = '') => {
 	}
 };
 // 根据id去重
-export const uniqueArray = (array = []) =>
-	Array.from(new Set(array.map(obj => obj.id))).map(id => {
-		return array.find(obj => obj.id === id);
-	});
-// 清理参数
-export const cleanParams = function (params = {}) {
-	const obj = {};
-	Object.keys(params).forEach(d => {
-		if (params[d] || params[d] === 0) {
-			obj[d] = params[d];
-		}
-	});
-	return obj;
-};
+export const uniqueArray = (array = []) => Array.from(new Set(array.map(obj => obj.id))).map(id => {
+	return array.find(obj => obj.id === id);
+});
 // 转换为queryString
 export const queryString = query => {
 	return Object.keys(query).reduce((prve, next) => {
@@ -55,4 +44,27 @@ export const createId = (len = 5) => {
 	if (len > 11) len = 11;
 	let str = Math.random().toString(36).substr(2);
 	return str.substr(0, len);
+};
+// 移除null和undefined
+export const cleanObj = (obj) => {
+	return Object.keys(obj).reduce((p, n) => {
+		if (obj[n] || obj[n] === 0 || obj[n] === false) p[n] = obj[n];
+		return p;
+	}, {});
+};
+// 覆盖合并(1覆盖2)
+export const mergeObjects = (obj1, obj2) => {
+	const merged = { ...obj2 };
+
+	for (let key in obj1) {
+		if (obj1.hasOwnProperty(key)) {
+			if (typeof obj1[key] === 'object' && !Array.isArray(obj1[key]) &&
+				typeof obj2[key] === 'object' && !Array.isArray(obj2[key])) {
+				merged[key] = mergeObjects(obj1[key], obj2[key]);
+			} else {
+				merged[key] = obj1[key];
+			}
+		}
+	}
+	return merged;
 };

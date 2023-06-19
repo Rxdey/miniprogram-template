@@ -1,4 +1,5 @@
-export const baseUrl = "http://127.0.0.1";
+import { mergeObjects } from '../utils';
+import { BASE_URL } from '../utils/env';
 
 const defaultConfigs = {
 	url: "/",
@@ -8,8 +9,8 @@ const defaultConfigs = {
 	},
 	timeout: 60 * 1000,
 	method: "GET",
-	dataType: "json",
-	responseType: "text",
+	// dataType: "json",
+	// responseType: "text",
 };
 /**
  * 请求简单封装
@@ -21,19 +22,13 @@ const defaultConfigs = {
  */
 const request = (configs, data = {}, { loading = true, loadingMsg = "加载中", toast = true } = {}) => {
 	if (!configs.url) return;
-	const setting = {
-		...defaultConfigs,
-		...configs,
-		method: configs.method.toUpperCase(),
-	}; // 简单的merge下
+	const setting = mergeObjects(configs, defaultConfigs);
 	setting.header = {
-		...defaultConfigs.header,
-		...configs.header,
-		// token: wx.getStorageSync("token"),
-		// userCode: wx.getStorageSync("userCode"),
+		...setting.header,
+		// token: ''
 	};
 	// 如果没有设置baseUrl 默认使用公共baseUrl
-	setting.url = baseUrl + setting.url;
+	setting.url = BASE_URL + setting.url;
 	// console.warn("请求url："+setting.url);
 	// console.warn("请求参数",data);
 	loading &&
