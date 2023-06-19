@@ -1,7 +1,7 @@
 import login from './login';
 
 const APIS = {
-  login,
+    login,
 };
 
 export default APIS;

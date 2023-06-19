@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "@vant/weapp": "^1.10.19",
-    "dayjs": "^1.11.8",
-    "miniprogram-api-promise": "^1.0.4"
-  }
-}

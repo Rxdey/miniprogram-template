@@ -1,10 +1,7 @@
 const login = {
   login: {
-    url: "/login/login",
-    method: "post",
-    // header: {
-    //   'content-type': 'application/json'
-    // }
+    url: '/login',
+    method: 'post',
   },
 };
 export default login;
