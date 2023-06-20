@@ -1,0 +1,31 @@
+.page {
+	padding: 0;
+	background-color: #f7f7f7;
+	height: 100vh;
+}
+
+// .container {
+	
+// }
+
+.search {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    &__bar {
+        flex: 1;
+        min-width: 1px;
+        padding: 0;
+        margin-right: $padding-16;
+    }
+    &__button {
+        font-size: 0;
+    }
+
+}
+
+.card {
+	padding: $margin-16;
+	text-align: center;
+	border: 1rpx solid #d5d5d5;
+}

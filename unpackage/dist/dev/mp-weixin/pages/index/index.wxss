@@ -1,0 +1,27 @@
+.page {
+  padding: 0;
+  background-color: #f7f7f7;
+  height: 100vh;
+}
+.container {
+  padding: 16rpx;
+}
+.search {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.search__bar {
+  flex: 1;
+  min-width: 1px;
+  padding: 0;
+  margin-right: 16px;
+}
+.search__button {
+  font-size: 0;
+}
+.card {
+  padding: 16rpx;
+  text-align: center;
+  border: 1rpx solid #d5d5d5;
+}

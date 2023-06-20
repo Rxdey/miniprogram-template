@@ -16,4 +16,8 @@ export default {
 <style lang="scss">
 /*每个页面公共css */
 @import '@/uni_modules/uni-scss/index.scss';
+page {
+	color: #333;
+	font-size: 28rpx;
+}
 </style>

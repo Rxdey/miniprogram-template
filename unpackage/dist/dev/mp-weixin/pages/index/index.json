@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "DEMO",
+  "navigationBarBackgroundColor": "#000000",
+  "navigationBarTextStyle": "white",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "geek-header": "../../uni_modules/geek-header/components/geek-header/geek-header",
+    "uni-search-bar": "../../uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar"
+  }
+}

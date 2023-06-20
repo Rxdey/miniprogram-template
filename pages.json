@@ -4,7 +4,7 @@
 		"style": {
 			"navigationBarTitleText": "DEMO",
 			"navigationBarBackgroundColor": "#000000",
-			"navigationBarTextStyle": "light",
+			"navigationBarTextStyle": "white",
 			"navigationStyle": "custom"
 		}
 	}],
